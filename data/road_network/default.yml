@@ -1,0 +1,18 @@
+planet_osm_line:
+  types:
+    - lines
+  select:
+    - bridge
+    - highway
+    - layer
+    - name
+    - oneway
+    - railway
+    - smoothness
+    - surface
+    - tunnel
+    - width
+  where:
+    - highway IS NOT NULL
+    - railway IS NOT NULL
+

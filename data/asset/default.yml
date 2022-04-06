@@ -1,0 +1,11 @@
+building_asset_polygon:
+  types:
+    - polygons
+  select:
+    - amenity
+    - building
+    - shop
+    - office
+  where:
+    - building IS NOT NULL
+
