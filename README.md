@@ -1,6 +1,6 @@
-# Eco-Ex
+# URSD
 
-Eco-Ex: a georeferenced dataset to train and test deep learning algorithms for economic exposure.
+URSD: a georeferenced dataset to train and test deep learning algorithms for economic exposure.
 
 ## Dataset Access
 
