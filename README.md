@@ -19,7 +19,7 @@ Datasets include economic exposure, remote sensing satellite imagery, night ligh
 
 ### Example Dataset
 
-A sample of the dataset is provided at [sample data](data/used_data.csv) and image in [sample image](data/daytime_image/Fujian Province/13919_27249.png).
+A sample of the dataset is provided at [sample data](data/used_data.csv) and image in [sample image](data/daytime_image/FujianProvince/13919_27249.png).
 
 ### Train
 
