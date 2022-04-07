@@ -53,4 +53,4 @@ with open('ozyx_ch_district_z15.json', 'r') as json_file_zyx:
     has_exposure = data.loc[data['exposure'] != 0]
     has_no_exposure = data.loc[data['exposure'] == 0]
     data_select = pd.concat([has_exposure, has_no_exposure.sample(3000)], axis=0)
-    data_select[['image_id', 'exposure', 'country', 'road_network', 'light_sum', 'light_mean']].to_csv('used_data_class5.csv', index=False)
+    data_select[['image_id', 'exposure', 'country', 'road_network', 'light_sum', 'light_mean']].to_csv('used_data.csv', index=False)

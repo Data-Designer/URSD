@@ -43,12 +43,12 @@ from utils.zoo.new_model import *
 cv2.setNumThreads(0)
 cv2.ocl.setUseOpenCL(False)
 
-model_name_pre = 'experiments/efficientnetb0'
-snapshot_name_pre = 'classnum5_gradchange_noadd__test0.1_only_daytime_image_lr1e-05_wd0.01_gam0.9_dataall_batch32_dropput0.7_seed0'
+model_name = 'experiments/efficientnetb0'
+snapshot_name = 'classnum5_gradchange_noadd__test0.1_only_daytime_image_lr1e-05_wd0.01_gam0.9_dataall_batch32_dropput0.7_seed0'
 
 model = Efficientnetmodel(5)
 
-loaded_dict = torch.load(path.join(model_name_pre, snapshot_name_pre) + '/weight', map_location='cpu')['state_dict']
+loaded_dict = torch.load(path.join(model_name, snapshot_name) + '/weight', map_location='cpu')['state_dict']
 sd = model.state_dict()
 
 for k in model.state_dict():
@@ -57,7 +57,7 @@ for k in model.state_dict():
         sd[k] = loaded_dict[k]
 loaded_dict = sd
 model.load_state_dict(loaded_dict)
-best_score = torch.load(path.join(model_name_pre, snapshot_name_pre) + '/weight', map_location='cpu')['best_score']
+best_score = torch.load(path.join(model_name, snapshot_name) + '/weight', map_location='cpu')['best_score']
 print('load successfully')
 print(best_score)
 

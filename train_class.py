@@ -67,7 +67,7 @@ dropout = 0.7
 batch_size = 32
 val_batch_size = 16
 class_num = 5
-snapshot_name = 'testclassnum{}_gradchange_noadd__test0.1_only_daytime_image_lr{}_wd{}_gam{}_data{}_batch{}_dropput{}_seed{}'.\
+snapshot_name = 'classnum{}_gradchange_noadd__test0.1_only_daytime_image_lr{}_wd{}_gam{}_data{}_batch{}_dropput{}_seed{}'.\
     format(class_num, lr, wd, gam, 'all', batch_size, dropout, seed)
 makedirs(path.join(model_name, snapshot_name), exist_ok=True)
 # default 'log_dir' is 'runs'
@@ -333,7 +333,7 @@ if __name__ == '__main__':
     import warnings
     warnings.filterwarnings("ignore")
     input_shape = (224, 224)
-    data = pd.read_csv('data/used_data_class5.csv', encoding='utf-8')
+    data = pd.read_csv('data/used_data.csv', encoding='utf-8')
     has_exposure = data.loc[data['exposure'] != 0]
     has_no_exposure = data.loc[data['exposure'] == 0]
 

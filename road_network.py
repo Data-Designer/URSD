@@ -14,10 +14,25 @@ import time
 import os
 os.chdir('data')
 random.seed(0)
+# python road_network.py --izyx ozyx_ch_district_z15 --idat odat_ch_district_z15 --odir road_network
 
-izyx = 'ozyx_ch_district_z15'
-idat = 'odat_ch_district_z15'
-odir = 'road_network'
+# input :
+# input zyx_district.json, output dir
+parser = argparse.ArgumentParser()
+parser.add_argument('--izyx', help='input zyx_district json name')
+parser.add_argument('--idat', help='input dat_district csv name')
+parser.add_argument('--odir', help='output exposure dir name')
+
+args = parser.parse_args()
+
+if args.izyx == None or args.odir == None:
+    print(
+        "Error! please fill zyx_district json name, output exposure dir name")
+    exit(0)
+
+izyx = args.izyx
+idat = args.idat
+odir = args.odir
 
 
 def load_and_process(file):

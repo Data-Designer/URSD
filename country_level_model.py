@@ -66,7 +66,7 @@ data_all = data_all.iloc[:, 1:]
 
 data_root_path = 'data/'
 model_name = 'experiments/add_feature_efficientnetb0'
-snapshot_name_pre = 'classnum5_gradchange_noadd__test0.1_only_daytime_image_lr0.0001_wd0.01_gam0.9_dataall_batch64_dropput0.7_seed0'
+snapshot_name = 'classnum5_gradchange_noadd__test0.1_only_daytime_image_lr0.0001_wd0.01_gam0.9_dataall_batch64_dropput0.7_seed0'
 
 add_light = True
 add_road = True
@@ -122,7 +122,7 @@ else:
         model = Efficientnetmodel(class_num)
 model = model.cuda()
 
-loaded_dict = torch.load(path.join(model_name, snapshot_name_pre) + '/weight')['state_dict']
+loaded_dict = torch.load(path.join(model_name, snapshot_name) + '/weight')['state_dict']
 sd = model.state_dict()
 
 for k in model.state_dict():
@@ -131,7 +131,7 @@ for k in model.state_dict():
         sd[k] = loaded_dict[k]
 loaded_dict = sd
 model.load_state_dict(loaded_dict)
-best_score = torch.load(path.join(model_name, snapshot_name_pre) + '/weight')['best_score']
+best_score = torch.load(path.join(model_name, snapshot_name) + '/weight')['best_score']
 print('load successfully')
 
 iterator = tqdm(data_loader)
